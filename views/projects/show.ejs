@@ -1,0 +1,189 @@
+<% include ../partials/header %>
+
+<div id="project-container">
+	<div class="row">
+		<div class="col-md-3 col-xs-10" id="map-bar">
+			<script >
+				function initMap(){
+				var subhaDam = {lat: 27.5528864, lng: 94.2593899};
+				  var map = new google.maps.Map(document.getElementById('map'),{
+				  zoom: 16,
+				  center: subhaDam
+				  });
+				  
+				  var marker = new google.maps.Marker({
+				  position: subhaDam,
+				  map: map
+				  });
+				}
+			</script>
+			<h3>Location : </h3>
+			<div id="map"></div>
+			<p></p>		
+		</div>
+		<div class="col-md-6 col-xs-10" id="project-content">
+				<h1 class="page-header"><%= project.title %></h1>
+				<h4>Posted by The <%= project.ministryName %></h4>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-xs-5">	
+
+							<div class="img_slide">
+								<div class="slider">
+									<input type="radio" name="slide_switch" id="id1" checked="checked"/>
+									<label for="id1">
+										<img src="<%=project.image%>" width="100"/>
+									</label>
+									<img class="img-responsive" src="<%= project.image %>" style=" min-height: 500px;max-width: 700px;min-width:500px"/>
+									
+									<!--Lets show the second image by default on page load-->
+									<input type="radio" name="slide_switch" id="id2" />
+									<label for="id2">
+										<img src="" width="100"/>
+									</label>
+									<img class="img-responsive" src=""/>
+									
+									<input type="radio" name="slide_switch" id="id3"/>
+									<label for="id3">
+										<img src="" width="100"/>
+									</label>
+									<img class="img-responsive" src=""/>
+									
+									<input type="radio" name="slide_switch" id="id4"/>
+									<label for="id4">
+										<img src="" width="100"/>
+									</label>
+									<img class="img-responsive" src=""/>
+									
+									<input type="radio" name="slide_switch" id="id5"/>
+									<label for="id5">
+										<img src="" width="100"/>
+									</label>
+									<img class="img-responsive" src=""/>
+								</div>
+							</div>
+					</div>
+				</div>
+
+
+				<p><strong>Progress : </strong></p>
+
+				<div class="meter">
+					<span style="width: 30%">
+				</div>
+				
+				<div class="project-desc">
+					<p><strong>Details :</strong></p>
+						<li><strong>Project Name : </strong><%= project.title %></li>
+						<li><strong>Headed By : </strong><%=project.head%></li>
+						<li><strong>Sanctioned Budget : </strong> <%=project.budget%></li>
+						<li><strong>Started From : </strong><%=project.startDate%></li>
+						<li><strong>Estimated Completion Date :</strong> <%=project.endDate%></li>
+					<ul>
+					</ul>	
+				</div>
+				<% if(currentUser && project.author.id.equals(currentUser._id)) {%>
+						<a class="btn btn-warning" href="/projects/<%=project.id%>/edit"><i class="fa fa-pencil" aria-hidden="true">  Edit This Post</i></a>
+						<form id="deleteForm" action="/projects/<%=project._id%>?_method=DELETE" method="POST">
+							<button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i>  Delete</button>
+						</form>
+						
+					<% } %>
+
+				
+				<%if(currentUser && currentUser.username === "modoner"){%>
+					<a class="btn btn-primary" href="/report">Generate Report</a>
+				<%}%>	
+
+					<br><br>
+				<div class="para"><p><%=project.description%></p></div>	
+
+				<%var a = true;%>
+				<%if(currentUser){%>
+					<%project.ratings.forEach(function(rating){%>
+						<%if(rating.author.id.equals(currentUser._id)){%>
+							<%a = false;%>		
+						<%}else{%>
+							<%a = true;%>
+						<%}%>
+					<%})%>
+				<%}%>
+				<%if(a){%>
+					<div class="stars">
+					  <form action="/projects/<%=project._id%>/comments/rating" method="POST">
+					    <input class="star star-5" id="star-5" type="radio" name="star[selected]" value="5"/>
+					    <label class="star star-5" for="star-5"></label>
+					    <input class="star star-4" id="star-4" type="radio" name="star[selected]" value="4"/>
+					    <label class="star star-4" for="star-4"></label>
+					    <input class="star star-3" id="star-3" type="radio" name="star[selected]" value="3"/>
+					    <label class="star star-3" for="star-3"></label>
+					    <input class="star star-2" id="star-2" type="radio" name="star[selected]" value="2"/>
+					    <label class="star star-2" for="star-2"></label>
+					    <input class="star star-1" id="star-1" type="radio" name="star[selected]" value="1"/>
+					    <label class="star star-1" for="star-1"></label>
+					    <button class="btn btn-primary">Rate This Project!</button>
+					  </form>
+					</div>	
+				<%}%>		
+	
+				<div class="comment-box">
+					<i class="fa fa-comment" aria-hidden="true"></i>  Write Comment
+					<form action="/projects/<%=project._id%>/comments" method="POST">
+						<textarea placeholder="Write Comment here" name="comment[text]"></textarea>
+
+						<div class="comment-button">
+							<button class="btn btn-primary">
+								<span class="glyphicon glyphicon-comment"></span>
+								Add new comment
+							</button>	
+						</div>
+					</form>
+				</div>	
+
+				<div class="comment-display">
+					<% project.comments.forEach(function(comment){ %>
+						<div class="row">
+							<div class="col-md-12">
+								<strong><%= comment.author.username %></strong>
+								<span class="pull-right"><%=comment.updated.toDateString()%></span>
+								<%project.ratings.forEach(function(rating){%>
+									<%if(rating.author.username === comment.author.username){%>
+										<%for(var i=1; i<=parseInt(rating.selected); i++){%>
+											<i class="fa fa-star" aria-hidden="true"></i>
+										<%}%>	
+									<%}%>
+								<%})%>	
+								<p><%= comment.text %></p>
+								
+								<p style="padding-left:20px;"><%= comment.reply %></p>
+								<% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+										<a class="btn btn-xs btn-warning" href="/projects/<%=project._id%>/comments/<%=comment._id%>/edit">Edit</a>
+
+										<form id="comment_delete_form" action="/projects/<%=project._id%>/comments/<%=comment.id%>?_method=DELETE" method="POST">
+											<button class="btn btn-xs btn-danger">Delete</button>
+										</form>
+									<% } %>
+								<% if(currentUser && project.author.id.equals(currentUser._id)) {%>
+									<a id="reply_btn" class="btn btn-primary" ><i class="fa fa-pencil" aria-hidden="true"> Reply </i></a>
+									<div id="reply_box" class="reply_box_display">
+										<form action="/projects/<%=project._id%>/comments/reply" method="POST">
+											<textarea placeholder="Write Reply" name="comment[reply]"></textarea>
+											<button class="btn btn-xs btn-primary">Submit</button>
+										</form>
+									</div>
+								<% } %>	
+									<hr>
+								</div>
+							</div>
+					<% }) %>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJq5B4MEZcaSwL3DkGL3Bzjeu1wlecpLs&callback=initMap"></script>
+<% include ../partials/footer %>
+

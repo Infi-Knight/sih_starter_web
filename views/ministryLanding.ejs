@@ -1,0 +1,22 @@
+<% include ./partials/header %>
+
+<div id="ministry_landing">
+	<h1>Welcome, <%=currentUser.username.toUpperCase()%></h1>
+</div>
+
+<%if(currentUser.username === "modoner"){%>
+	<div class="container">
+		<div class="ministry_landing_options"><h2><a href="/budgets/show">View Budget Information</a></h2></div>
+		<div class="ministry_landing_options"><h2><a href="/projects/">View Projects</a></h2></div>	
+	</div>	
+<%}else{%>
+		<div class="container">
+			<div class="ministry_landing_options"><h2><a href="/projects/new">Add New Project</a></h2></div>
+			<div class="ministry_landing_options"><h2><a href="/budgets/new">Enter Budget Information</a></h2></div>
+			<div class="ministry_landing_options"><h2><a href="/projects/">View Projects</a></h2></div>	
+		</div>
+	<%}%>
+
+
+
+<% include ./partials/footer %>

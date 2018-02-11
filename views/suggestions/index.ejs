@@ -1,0 +1,49 @@
+<% include ../partials/header %>
+
+<div class="container">
+
+    <header class="">
+        <div class="container">
+            <h1>Welcome to Suggestions Page</h1>
+            <%if(currentUser){%>
+                <%if(currentUser.role === "User"){%>
+                    <p>
+                        <a class="btn btn-primary btn-large" href="/suggestions/new">Add Your Suggestion</a>
+                    </p>
+                <%}%>    
+            <%}%>
+        </div>
+    </header>
+
+            <% suggestions.forEach(function(suggestion){ %>
+                <div id="suggestion_display">
+                    <div class="row">    
+                        <div class="col-md-8 col-sm-12"> 
+                            <div>
+                                <h3><strong><%= suggestion.title %></strong></h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">    
+                        <div class="col-md-8 col-sm-12"> 
+                            <div>
+                                <h4><strong>Ministry : </strong><%= suggestion.ministry %></h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-8 col-sm-12"> 
+                            <p>
+                                <%=suggestion.text%>
+                            </p>
+                        </div>
+                    </div>   
+                </div>
+            
+             <% }); %>
+
+</div>
+
+<% include ../partials/footer %>

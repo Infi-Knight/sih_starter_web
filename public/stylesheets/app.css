@@ -1,0 +1,615 @@
+
+@media(max-width: 960px){
+  .container{
+    width : auto;
+  }
+  #project-container, #ministry-container{
+  	width: auto;
+  }
+
+}
+
+
+html{
+  height: 100%;
+}
+
+body {
+	font-family: 'Sansita', sans-serif;
+	left: 0;
+	margin: 0;
+	position: relative;
+	overflow: scroll;
+	background-image: url(../assets/symphony.png);
+	background-attachment: fixed;
+}
+
+hr{
+  color: #44464f;
+  width: 400px;
+  /*height: 5px;*/
+  border-top: 1px solid #f8f8f8;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+h3{
+  color: black;
+}
+
+.goog-tooltip {
+    display: none !important;
+}
+
+.goog-tooltip:hover {
+    display: none !important;
+}
+
+.goog-text-highlight {
+    background-color: transparent !important;
+    border: none !important; 
+    box-shadow: none !important;
+}
+
+.row{
+    display: flex;
+    flex-wrap : wrap;
+}
+
+.thumbnail img{
+	width : 100%;
+}
+
+.thumbnail{
+	padding : 0;
+}
+
+.thumbnail .caption-full{
+	padding : 9px;
+}
+
+
+
+#logo{
+	margin-top: -15px;	
+	padding-right: 80px; 
+}
+
+#home_nav{
+	margin-left: -50px !important;
+}
+
+.content{
+  text-align: center;
+  padding-top: 5%;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+         0px 8px 13px rgba(0,0,0,0.1),
+         0px 18px 23px rgba(0,0,0,0.1);
+}
+
+#ar, #as{
+  color: #F2F6F7;
+}
+
+#me{
+  color: #F2F6F7;
+}
+
+.carousel-inner > .item > img{
+width: 100%;
+height:500px; 
+margin: 0 auto;
+}
+
+/*#translate{
+	margin-top: 0px;
+	ma
+	text-align: right;
+}*/
+
+#login{
+  padding-right: 10px;
+}
+
+#myCarousel{
+  margin-top: 50px;
+}
+
+#login_form, #sign_up, #sign_up_min, #project-form, #suggestion-form, #budget-form, #show_budget_form{
+	margin-top: 100px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	border: 2px solid rgba(180, 188, 191, .3);
+	border-width: 60%;
+	background-color: rgba(255,255,255, 0.7);
+}
+
+#wrapper {
+	min-height:100%;
+	position:relative;
+}
+/*#header {
+	background:#ededed;
+	padding:10px;
+}*/
+#content {
+	padding-bottom:600px; /* Height of the footer element */
+}
+#footer {
+	width:100%;
+	height:	270	px;
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+
+.footer-distributed{
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	font: bold 16px sans-serif;
+	text-align: left;
+
+	padding: 50px 60px 40px;
+	margin-top: 80px;
+	overflow: hidden;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	float: left;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0 0 10px;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 0 0 10px;
+	padding: 0;
+}
+
+.footlinks{
+	display: inline-block;
+	padding-right: 20px;
+}
+
+.footlinks a{	
+	line-height: 1.8;
+	text-decoration: none;
+	color:  white;
+	font-size: 1.2em;
+	color: white;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer social icons */
+
+.footer-distributed .footer-icons{
+	margin-top: 40px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	float: right;
+}
+
+.footer-distributed .footer-right p{
+	display: inline-block;
+	vertical-align: top;
+	margin: 15px 42px 0 0;
+	color: #ffffff;
+}
+
+.equalize-row {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.equalize {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex
+}
+
+.thumbnail a>img{
+	height: 100%;
+}
+
+.img-wrapper{
+	height: 500px;
+    width: 700px;
+}
+
+.img-wrapper img{
+	border-radius: 10px;
+	margin-bottom: 80px;
+	box-shadow: 3px 3px 2px #888888;
+}
+
+.para{
+	min-width:60%;
+    text-align: justify;
+    text-justify: inter-word;	
+}
+
+
+
+.project-desc{
+	padding: 10px;
+	border: 2px solid rgba(180, 188, 191, .3);
+	margin-top: 30px;
+	margin-bottom: 30px;
+	box-shadow: 3px 3px 2px #888888;
+	border-radius: 5px;
+	background-color: rgba(255,255,255, .7);
+	min-width: 60%;
+}
+
+
+.meter{
+	height: 30px;
+	min-width: 60%;
+	position: relative;
+	background: rgba(191, 191, 191,.8);
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 5px;
+	padding: 5px;
+	box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.meter > span {
+	  display: block;
+	  height: 100%;
+	  border-top-right-radius: 2px;
+	  border-bottom-right-radius: 2px;
+	  border-top-left-radius: 8px;
+	  border-bottom-left-radius: 8px;
+	  background-color: #0B42F8;
+/*	  background-image: linear-gradient(
+	    center bottom,
+	    rgb(43,194,83) 37%,
+	    rgb(84,240,84) 69%
+	  );*/
+	  box-shadow: 
+	    inset 0 2px 9px  rgba(255,255,255,0.3),
+	    inset 0 -2px 6px rgba(0,0,0,0.4);
+	  position: relative;
+	  overflow: hidden;
+}
+
+
+.img_slide{
+	margin-bottom: 30px;
+	padding-bottom: 200px;
+}
+
+.slider{
+	width: 640px; /*Same as width of the large image*/
+	position: relative;
+	/*Instead of height we will use padding*/
+	padding-top: 320px; /*That helps bring the labels down*/
+	
+	margin-bottom: 100px;
+	
+	/*Lets add a shadow*/
+	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
+}
+
+
+/*Last thing remaining is to add transitions*/
+.slider>img{
+	position: absolute;
+	left: 0; top: 0;
+	transition: all 0.5s;
+	height: 500px;
+	width: 800px;
+}
+
+.slider input[name='slide_switch'] {
+	display: none;
+}
+
+.slider label {
+	/*Lets add some spacing for the thumbnails*/
+	margin: 220px 0 0 18px;
+	border: 3px solid #999;
+	
+	float: left;
+	cursor: pointer;
+	transition: all 0.5s;
+	
+	/*Default style = low opacity*/
+	opacity: 0.6;
+}
+
+.slider label img{
+	display: block;
+}
+
+/*Time to add the click effects*/
+.slider input[name='slide_switch']:checked+label {
+	border-color: #666;
+	opacity: 1;
+}
+/*Clicking any thumbnail now should change its opacity(style)*/
+/*Time to work on the main images*/
+.slider input[name='slide_switch'] ~ img {
+	opacity: 0;
+	transform: scale(1.1);
+}
+/*That hides all main images at a 110% size
+On click the images will be displayed at normal size to complete the effect
+*/
+.slider input[name='slide_switch']:checked+label+img {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.comment-box{
+	margin-top: 20px;
+	min-width: 60%;
+}
+
+.comment-box textarea{
+	margin-top: 20px;
+	height: 100px;
+	min-width: 60%;
+}
+
+#reply_box{
+	display: none;
+}
+
+#reply_box textarea{
+	margin-top: 5px;
+	width:60%;
+}
+
+#suggestion-form textarea{
+	width: 80%;
+	height: 100px;
+}
+
+#suggestion-form input{
+	width: 80%;
+}
+
+#suggestion_display{
+	padding: 10px;
+	border: 2px solid rgba(180, 188, 191, .3);
+	margin-top: 30px;
+	margin-bottom: 30px;
+	width: 70%;
+	box-shadow: 3px 3px 2px #888888;
+	border-radius: 5px;
+	background-color: rgba(255,255,255, .7);
+	width: 60%;	
+}
+
+.comment-display{
+	border: 2px solid rgba(164, 168, 173,0.3);
+	border-radius: 2%;	
+	padding: 10px;
+	min-width: 60%;
+	max-width: 60%;
+	box-shadow: 3px 3px 2px #888888;
+	background:rgba(255,255,255,0.5);
+}
+
+.form-group span{
+	font-size: 15px;
+	margin-bottom: 15px;
+}
+
+#confirm_password{
+	margin-bottom: 20px;
+}
+
+#pass_message{
+	padding: 10px;
+}
+
+#project-content, #ministry-content{
+	padding-left: 50px;
+    padding-top: 20px;
+}
+
+#map-bar{
+	border-right: 2px solid rgba(0,0,0,.5);
+}
+
+#map-bar h3{
+	margin-top: 80px;
+	margin-left: 10px;  
+}
+
+#map{
+	/*margin-top: 80px;*/
+	margin-left: 10px; 
+	width: 90%;
+	height: 350px;
+	border: 2px solid rgba(255,255,255,0.3);
+}
+
+#recommendation{
+	margin-top: 700px;
+
+}
+
+#ministry_landing{
+	height: 100vh;
+	background-image: url(https://images.unsplash.com/photo-1487446929682-f62f73984006?dpr=1.25&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=);
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#ministry_landing h1{
+	color: #000;
+	font-size: 50px;
+	padding: 20px;
+	border: 2px solid black;
+	background : rgba(255,255,255, 0.6);
+	box-shadow : 2px 2px 1px #000;
+  	text-shadow: 0px 4px 3px rgba(0,0,0,0.7),
+		         0px 8px 13px rgba(0,0,0,0.4),
+		         0px 18px 23px rgba(0,0,0,0.4);
+}
+
+.ministry_landing_options{
+	text-align: center;
+	margin-top: 50px;
+	padding: 80px;
+	border: 2px solid rgba(53, 195, 242, .3); 
+	background : rgba(53, 195, 242, .7);
+}
+
+.ministry_landing_options h2>a{
+	color: white;
+}
+
+#left_content{
+	position: absolute;
+	left:0px;
+}
+
+.btn-xlarge {
+    padding: 18px 28px;
+    font-size: 22px; //change this to your desired size
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}
+
+#google_translate_element{
+	margin-top: 30px;
+}
+
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+    } 
+body {
+    top: 0px !important; 
+    }
+
+.comment-button{
+	width: 60%;
+	margin-bottom: 20px;
+	text-align: right;
+}    
+
+.flash{
+	padding-top: 38px;
+}
+
+div.stars {
+  width: 270px;
+  display: inline-block;
+}
+
+input.star { display: none; }
+
+label.star {
+  float: right;
+  padding: 10px;
+  font-size: 36px;
+  color: #444;
+  transition: all .2s;
+}
+
+input.star:checked ~ label.star:before {
+  content: '\f005';
+  color: #FD4;
+  transition: all .25s;
+}
+
+input.star-5:checked ~ label.star:before {
+  color: #FE7;
+  text-shadow: 0 0 20px #952;
+}
+
+input.star-1:checked ~ label.star:before { color: #F62; }
+
+label.star:hover { transform: rotate(-15deg) scale(1.3); }
+
+label.star:before {
+  content: '\f006';
+  font-family: FontAwesome;
+}
+
+#ministry_brief{
+	padding: 10px;
+	border: 2px solid rgba(180, 188, 191, .3);
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-left: auto;
+	margin-right: auto; 
+	width: 70%;
+	box-shadow: 3px 3px 2px #888888;
+	border-radius: 5px;
+	background-color: rgba(255,255,255, .7);
+	width: 60%;
+}
+
+.ministry_project{
+	margin : 0 auto;
+	padding-left: 80px;
+}
+
+.reply_box_display{
+	display:block;
+}
+
+#budget_table{
+	margin-top: 80px;
+}
+
+#budget_table table{
+	
+}
+
+#budget_table thead{
+	background: rgba(255,255,255, .7);
+}
+

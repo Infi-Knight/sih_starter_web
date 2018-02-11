@@ -1,0 +1,46 @@
+<% include ../partials/header %>
+
+<div class="container" id="budget-form">
+    <h1 style="text-align : center;">Add Budget Information</h1>
+
+        <div style="width : 30%; margin: 25px auto;">
+            <form action="/budgets" method="POST">
+                <div class="form-group">
+                    <span class="label label-default">Ministry :</span><br><br>
+                    <select name="ministry">
+                        <option></option>
+                        <option>Ministry of Development of North Eastern Region</option>
+                        <option>Ministry of Railways</option>
+                        <option>Ministry of Housing and Urban Poverty Alleviation</option>
+                        <option>Ministry of Road Transport and Highways</option>
+                        <option>Ministry of Women and Child Development</option>
+                        <option>Ministry of Youth Affairs and Sports</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <span class="label label-default">Total Budget Sanctioned :</span><br><br><input class="form-control" type="text" name="total" placeholder="Total Budget" required />
+                </div>
+                <div class="form-group">
+                    <span class="label label-default">Fiscal Year :</span><br><br>
+                    <select name="year">
+                        <option></option>
+                        <option>2016</option>
+                        <option>2015</option>
+                        <option>2014</option>
+                        <option>2013</option>
+                        <option>2012</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <span class="label label-default">Amount Spent This Year For North Eastern Region :</span><br><br><input class="form-control" type="text" name="amountSpent" placeholder="Spent Amount" required />
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                </div>
+             </form>
+            <a href="/ministry/landing">Go Back</a>
+         </div>
+
+</div>
+
+<% include ../partials/footer %>

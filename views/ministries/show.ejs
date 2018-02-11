@@ -1,0 +1,117 @@
+<% include ../partials/header %>
+
+	<style>
+		#p{
+			font-face:verdana;
+			text-align: justify;
+			margin: 0 auto; 
+			width:60%;
+		    text-justify: inter-word;
+		}
+
+		.page-title {
+			border: 2px solid black; 
+		    font-size: 40px;
+		    font-family: 'Roboto', sans-serif;
+		    font-weight: 700;
+		    color: #ffffff;
+		    padding:85px;
+		    line-height: 45px;
+		   
+		    text-transform: uppercase;
+		    width: 100%;
+		    text-align: center;
+		    background: rgba(1,12,25,.82); 
+		}
+
+		#ministry_page{
+			text-align: center;
+		}
+
+		#ministry_image{
+			min-width : 70%;
+			max-width: 70%;
+			margin: 0 auto;
+			padding: 20px 0px 30px 50px;
+		}
+
+	</style>
+
+	<div class="stminshow">
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<div class="page-title">
+					<%=ministry.title%>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+			
+
+	<div class="stminshow">
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<div id="ministry_image">
+					<img src="<%=ministry.image%>" alt="<%=ministry.title%>" style = "width:100%">	
+				</div>
+			</div>
+		</div>
+	</div>
+
+		
+	
+
+	<div id="ministry_brief">
+		<p align=center><strong>Website:</strong> <a href="<%=ministry.link%>"> <%=ministry.link%></a></p>
+		<p align=center><strong>Formed:</strong></p>
+		<p align=center><strong>Jurisdiction:</strong> India</p>
+		<p align=center><strong>Headquarters:</strong> <%=ministry.headquarter%></p>
+		<p align=center><strong>Cabinet minister:</strong> <%=ministry.minister%></p>
+		<p align=center><strong>Minister of state:</strong> <%=ministry.ministerOfState%></p>	
+	</div>
+	
+
+	<div id="p">
+		<p>
+			<%=ministry.description%>
+		</p>
+		<h2>Budget Information : </h2>
+		
+				<div class="container" id="budget_table">
+					<table class="table table-bordered table-hover">
+						<thead>
+							<tr>
+								<th>Ministry Name</th>
+								<th>Total Budget Sanctioned</th>
+								<th>Year</th>
+								<th>Amount Spent for NER</th>
+								<th>Spent Amount More/Less than required</th>
+							</tr>
+						</thead>
+						<tbody>
+							<%budgets.forEach(function(budget){%>
+								<%if(budget.ministry === ministry.title){%>
+								<tr class="active success">
+									<td><%=budget.ministry%></td>
+									<td><%=budget.total%></td>
+									<td><%=budget.year%></td>
+									<td><%=budget.amountSpent%></td>
+									<td><%=budget.amountDifference%></td>
+								</tr>
+								<%}%>
+							<%});%>	
+						</tbody>
+					</table>
+				</div>
+				
+	</div>
+
+	<hr style="width:100%">
+
+
+
+	
+
+<% include ../partials/footer %>

@@ -1,0 +1,188 @@
+<% include ./partials/header %>
+
+  <!-- <div class="container c-wrapper" id="carousel">
+
+    <div class="carousel slide" id="myCarousel" data-ride="carousel">
+
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+        <li data-target="#myCarousel" data-slide-to="6"></li>
+        <li data-target="#myCarousel" data-slide-to="7"></li>
+      </ol>
+
+      <div class="carousel-inner" role="listbox">
+
+        <div class="item active">
+          <img src="http://theholidayscout.com/images/location/2-arunachal-pradesh-recommended-tourist-circuits.jpg">
+          <div class="carousel-caption">
+            <h3 id="ar">Arunachal Pradesh</h3>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="http://www.tourism-of-india.com/pictures/travel_guide/assam-719.jpeg">
+          <div class="carousel-caption">
+            <h3 id="as">Assam</h3>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="http://blog.ninecolours.com/wp-content/uploads/2015/09/MAnipur-Valley.jpg">
+          <div class="carousel-caption">
+            <h3 id="ma">Manipur</h3>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="http://www.tourism-of-india.com/pictures/travel_guide/attractions/ka-khoh-ramhah-head-404.jpeg">
+          <div class="carousel-caption">
+            <h3 id="me">Meghalaya</h3>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="http://thenortheasttoday.com/wp-content/uploads/2017/02/ujanta.jpg">
+          <div class="carousel-caption">
+            <h3 id="me">Tripura</h3>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="http://www.mapsofindia.com/nagaland/nagaland-images/terrace-rice-fields.jpg">
+          <div class="carousel-caption">
+            <h3 id="me">Nagaland</h3>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="http://theideaofindia.in/wp-content/uploads/2014/08/018.jpg">
+          <div class="carousel-caption">
+            <h3 id="me">Mizoram</h3>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="http://image3.mouthshut.com/images/Restaurant/Photo/-35479_8669.jpg">
+          <div class="carousel-caption">
+            <h3 id="me">Sikkim</h3>
+          </div>
+        </div>
+
+
+      </div>
+
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+
+    </div>
+
+  </div> -->
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="content">
+          <h1>CareerBuddy</h1>
+          <h3>Learn, Train and work in the field you love</h3>
+          <h3>A Ministry of Skill Development & Entrepreneurship Initiative</h3>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="content">
+          <h3>In The Spotlight</h3>
+          <hr>
+        </div>
+      </div>
+    </div> -->
+
+  <div class="row equalize-row">
+    <% projects.forEach(function(project){ %>
+      <div class="col-md-4 col-sm-6 equalize">
+        <div class="thumbnail">
+          <a href="/projects/<%= project._id %>">
+            <img src="<%=project.image%>">
+          </a>
+        </div>
+      </div>
+      <% }); %>
+  </div>
+  <div class="row equalize-row">
+    <% projects.forEach(function(project){ %>
+      <div class="col-md-4 col-sm-6 equalize">
+        <p>
+          <%=project.description.substring(0,200)%>...
+            <a href="/projects/<%= project._id%>">Read More</a>
+        </p>
+      </div>
+      <% }); %>
+  </div>
+  <br>
+  <div class="row equalize-row">
+    <% projects.forEach(function(project){ %>
+      <div class="col-md-4 col-sm-6 equalize">
+        <div class="meter" style="width:100%;">
+          <span style="width: 30%">
+        </div>
+      </div>
+      <% }); %>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="content">
+          <h2>Ready to explore?</h2>
+          <h3>
+            <a class="btn btn-primary" href="/suggestions">Learn More</a>
+          </h3>
+          <hr>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/M_ebFg90owI" frameborder="0" gesture="media" allow="encrypted-media"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <%if(currentUser && currentUser.role === "GovUser"){%>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="content">
+            <h2>Go to Ministry Landing!</h2>
+            <h3>
+              <a class="btn btn-primary" href="/landing/ministry">Ministry Landing</a>
+            </h3>
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%}%> -->
+
+  </div>
+
+  <% include ./partials/footer %>

@@ -1,0 +1,34 @@
+<% include ../partials/header %>
+
+<div class="container" id="suggestion-form">
+	<div class="jumbotron"><h3>Post Suggestion</h3></div>
+	<form action="/suggestions" method="POST">
+		<div class="form-group">
+             <span class="label label-default"> Heading: </span><br><br><input class="form-control" type="text" name="suggestion[title]">
+        </div>
+
+        <div class="form-group">
+             <textarea placeholder="Write Your Thoughts" name="suggestion[text]"></textarea>
+        </div>
+
+        <!-- <div class="form-group">
+             <input class="form-control" type="text" name="suggestion[image]" placeholder="Image URL">
+        </div> -->
+
+        <span class="label label-default">Ministry :</span><br><br>
+            <select name="suggestion[ministry]">
+                <option></option>
+                <option>Ministry of Development of North Eastern Region</option>
+                <option>Ministry of Railways</option>
+                <option>Ministry of Housing and Urban Poverty Alleviation</option>
+                <option>Ministry of Road Transport and Highways</option>
+                <option>Ministry of Women and Child Development</option>
+                <option>Ministry of Youth Affairs and Sports</option>
+                <option>Ministry of Human Resource Development</option>
+            </select>
+            <br><br>
+            <button class="btn btn-primary">Submit Suggestion</button>
+	</form>		
+</div>
+
+<% include ../partials/footer %>

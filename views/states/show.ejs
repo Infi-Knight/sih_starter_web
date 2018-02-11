@@ -1,0 +1,75 @@
+<% include ../partials/header %>
+
+	<style>
+		#p{
+			font-face:verdana;
+			text-align: justify;
+			margin: 0 auto; 
+			width:60%;
+		    text-justify: inter-word;
+		}
+
+		.page-title {
+			border: 2px solid black; 
+		    font-size: 40px;
+		    font-family: 'Roboto', sans-serif;
+		    font-weight: 700;
+		    color: #ffffff;
+		    padding:85px;
+		    line-height: 45px;
+		   
+		    text-transform: uppercase;
+		    width: 100%;
+		    text-align: center;
+		    background: rgba(1,12,25,.82); 
+		}
+
+		#ministry_page{
+			text-align: center;
+		}
+
+		#ministry_image{
+			min-width : 60%;
+			max-width: 60%;
+			margin: 0 auto;
+			padding: 20px 0px 30px 0px;
+		}
+
+	</style>
+
+	<div class="stminshow">
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<div class="page-title">
+					<%=state.title%><br>
+					<span style="color:yellow;"><%=state.tag%></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div class="stminshow">
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+					<div id="ministry_image">
+							<img src="<%=state.image%>" alt="<%=state.title%>" style = "width:100%">	
+					</div>
+			</div>
+		</div>
+	</div>	
+
+	
+	
+
+	<div id="p">
+		<p>
+			<%=state.description%>
+		</p>	
+	</div>
+
+	<hr style="width:100%">
+
+	
+
+<% include ../partials/footer %>

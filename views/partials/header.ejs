@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CareerBuddy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Sansita:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/app.css">
+</head>
+
+<body>
+  <div id="wrapper">
+
+    <div id="header">
+      <div class="container" id="nav">
+        <nav id="navwrapper" class="navbar navbar-inverse  navbar-fixed-top navsize">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">
+                <img id="logo" src="/assets/ner_logo.jpg">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li class="active">
+                  <a id="home_nav" href="/">Home</a>
+                </li>
+
+                <li class="">
+                  <a id="" href="/">Dashboard</a>
+                </li>
+
+                <li class="">
+                  <a id="" href="/">Blog</a>
+                </li>
+
+                <li class="">
+                  <a id="" href="/">News</a>
+                </li>
+
+                <!-- <li class="dropdown">
+                          <a class="dropdown-toggle" data-toggle="dropdown" href="#">States
+                          <span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="/states/58dfac243154bce51e782475">Arunachal Pradesh</a></li>
+                            <li><a href="/states/58dfac9e3154bce51e782476">Assam</a></li>
+                            <li><a href="/states/58dfacde3154bce51e782477">Manipur</a></li>
+                            <li><a href="/states/">Mizoram</a></li>
+                            <li><a href="/states/">Meghalaya</a></li>
+                            <li><a href="/states/">Tripura</a></li>
+                            <li><a href="/states/">Nagaland</a></li>
+                            <li><a href="/states/">Sikkim</a></li>
+                          </ul>
+                       </li> -->
+
+                <!-- <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Ministries
+                    <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="/ministry/58df8fc13154bce51e78246e">Ministry of Development of North Eastern Region</a>
+                    </li>
+                    <li>
+                      <a href="/ministry/58e0d1828e111c56100f246b">Ministry of Railways</a>
+                    </li>
+                    <li>
+                      <a href="/ministry/58df9f753154bce51e78246f">Ministry of Youth And Sports</a>
+                    </li>
+                    <li>
+                      <a href="/ministry/58df9fec3154bce51e782470">Ministry of Human Resource Development</a>
+                    </li>
+                    <li>
+                      <a href="/ministry/58dfa07c3154bce51e782471">Ministry of Road Transport and Highways</a>
+                    </li>
+                    <li>
+                      <a href="/ministry/58dfa1393154bce51e782472">Ministry of Women and Child Development</a>
+                    </li>
+                    <li>
+                      <a href="/ministry/58dfa1d43154bce51e782473">Ministry of Urban Development</a>
+                    </li>
+                    <li>
+                      <a href="/ministry/58e0f1bd8e111c56100f246c">Ministry of Power</a>
+                    </li>
+                  </ul>
+                </li> -->
+
+                <!-- <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="/projects">Projects
+                    <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="/projects">Current Projects</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="/about">About</a>
+                </li>
+                <li>
+                  <a href="/contact">Contact</a>
+                </li> -->
+              </ul>
+
+              <form class="navbar-form navbar-left">
+                <div class="form-group">
+                  <input type="text" name="" class="form-control" placeholder="Search">
+                  <button type="submit">
+                    <i class="glyphicon glyphicon-search"></i>
+                  </button>
+                </div>
+              </form>
+              <ul class="nav navbar-nav navbar-right">
+                <% if(!currentUser){ %>
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Login
+                      <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="/login/user">Login as Public User</a>
+                      </li>
+                      <li>
+                        <a href="/login/gov">Login as Government Representative</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">SignUp
+                      <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="/register/user">Register as Public User</a>
+                      </li>
+                      <li>
+                        <a href="/register/gov">Register as Government Representative</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <% } else { %>
+                    <li>
+                      <a>Signed in as
+                        <%= currentUser.username %>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/logout">Log Out</a>
+                    </li>
+                    <% } %>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="container flash">
+          <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger">
+              <%= error %>
+            </div>
+            <% } %>
+
+              <% if(success && success.length > 0){ %>
+                <div class="alert alert-success">
+                  <%= success %>
+                </div>
+                <% } %>
+        </div>
+
+        <div id="google_translate_element"></div>
+
+        <div id="translate">
+          <script type="text/javascript">
+            function googleTranslateElementInit() {
+              new google.translate.TranslateElement({
+                pageLanguage: 'en'
+              }, 'google_translate_element');
+            }
+          </script>
+
+          <script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        </div>
+      </div>
+    </div>
+
+    <div id="content">

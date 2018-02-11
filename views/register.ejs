@@ -1,0 +1,59 @@
+<% include ./partials/header %>
+
+<script >
+
+    function check_pass(){
+            if (document.getElementById('password').value==document.getElementById('confirm_password').value){
+                 document.getElementById('reg_submit').disabled = false;
+                 document.getElementById('pass_message').className = "alert alert-success";
+                 document.getElementById('pass_message').innerHTML = "Password Matched!!";
+                }
+                else {
+                 document.getElementById('reg_submit').disabled = true;
+                 document.getElementById('pass_message').className = "alert alert-danger";
+                 document.getElementById('pass_message').innerHTML = "Password Did Not Match!!";
+                }
+        }  
+
+</script>
+
+
+
+<div class="container" id="sign_up">
+    <h1 style="text-align : center;">Register Account</h1>
+
+        <div style="width : 30%; margin: 25px auto;">
+            <form action="/register/user" method="POST">
+                <div class="form-group">
+                    <input class ="form-control" type="text" name="fName" placeholder="First Name" required>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="lName" placeholder="Last Name" required>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="username" placeholder="Choose username" required>
+                </div>
+                <div class="form-group">
+                    <input class ="form-control" type="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input id="password" class="form-control" type="Password" name="password" placeholder="Password" pattern=".{5,100}" onchange='check_pass();' required title="Password must be between 5-10 characters">
+                </div>
+                <div class="form-group">
+                    <input id="confirm_password" class="form-control" type="password" name="password_validation" placeholder="Confirm Password" pattern=".{5,100}" onchange='check_pass();' required> <span id="pass_message"></span>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" name="aadhar" placeholder="Aadhar Card ID" required>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block" id="reg_submit" disabled>Register</button>
+                </div>
+             </form>
+            <a href="/">Go Back</a>
+         </div>
+</div>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJq5B4MEZcaSwL3DkGL3Bzjeu1wlecpLs&callback=initMap">
+
+
+<% include ./partials/footer %>
